@@ -1,0 +1,104 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf6f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.contenedor {
+    text-align: center;
+    max-width: 500px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Diseño de la carta */
+.carta {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 50px 40px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0d8d8;
+    position: relative;
+}
+
+.carta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.texto-carta {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #5a3e3e;
+    transition: opacity 0.3s ease;
+    margin: 0;
+}
+
+/* Diseño del contador */
+.contador {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 0.9rem;
+    color: #d97777;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Diseño de los botones */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    background-color: #d97777;
+    color: white;
+    border: 2px solid #d97777;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(217, 119, 119, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #c45b5b;
+    border-color: #c45b5b;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Botón secundario para reiniciar */
+button.secundario {
+    background-color: white;
+    color: #d97777;
+    box-shadow: none;
+}
+
+button.secundario:hover {
+    background-color: #f9ecec;
+    color: #c45b5b;
+    border-color: #c45b5b;
+}

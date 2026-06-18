@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Palabras</title>
+    <link rel="stylesheet" href="estilos.css">
+    
+</head>
+<body>
+    <div class="contenedor">
+        <div class="carta" id="cartaVisual">
+            <p class="texto-carta" id="textoCarta" style="font-size: 1.1rem;">
+                <strong>¡Bienvenidos a este espacio de conexión! ✨</strong><br><br>
+                Aprovechen este juego para conocerse más, reírse y profundizar.<br><br>
+                <em>Un aviso importante:</em> Cada vez que saquen una carta, esa pregunta se borrará del mazo para que no se repita. Si algún día quieren volver a jugar con todas las cartas desde cero, solo tienen que tocar el botón <strong>"Reiniciar"</strong>.<br><br>
+                Hagan clic en "Sacar Carta" para empezar la charla.
+            </p>
+            <span class="contador" id="contadorCarta"></span>
+        </div>
+        <div class="botones">
+            <button onclick="juego.mostrarSiguienteCarta()">Sacar Carta</button>
+            <button class="secundario" onclick="juego.reiniciarMazo()">Reiniciar</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
