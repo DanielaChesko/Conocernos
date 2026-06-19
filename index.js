@@ -6,7 +6,7 @@ class MazoDeCartas {
         // Busca si hay una partida guardada en la memoria del navegador
         const guardado = localStorage.getItem('cartasRestantesPareja');
 
-        if (guardado) {
+        if (guardado) { // Si hay una partida guardada convierte el JSON (empaquetado) en formato JavaScript (como estaba por default en el array)
             this.preguntasDisponibles = JSON.parse(guardado);
         } else {
             this.inicializarMazo();
@@ -14,6 +14,7 @@ class MazoDeCartas {
     }
 
     inicializarMazo() {
+        // Reinicia el mazo
         this.preguntasDisponibles = this.preguntasOriginales.map((texto, index) => {
             return { texto: texto, numero: index + 1 };
         });
@@ -21,7 +22,7 @@ class MazoDeCartas {
     }
 
     guardarProgreso() {
-        // Guarda las cartas que quedan en la memoria local
+        // Guarda las cartas que quedan en la memoria local en forma de JSON (.stringify: empaquetar todo el array en una cadena de texto larga)
         localStorage.setItem('cartasRestantesPareja', JSON.stringify(this.preguntasDisponibles));
     }
 
@@ -32,7 +33,7 @@ class MazoDeCartas {
         }
 
         const indiceAleatorio = Math.floor(Math.random() * this.preguntasDisponibles.length);
-        const cartaSacada = this.preguntasDisponibles.splice(indiceAleatorio, 1)[0];
+        const cartaSacada = this.preguntasDisponibles.splice(indiceAleatorio, 1)[0]; // .splice() elimina un elemento del array y lo devuelve
 
         // Actualizamos la memoria para que esta carta desaparezca "para siempre"
         this.guardarProgreso();
@@ -442,6 +443,7 @@ const listaDePreguntas = [
 ];
 
 const juego = {
+    //Instanciamos el mazo
     mazo: new MazoDeCartas(listaDePreguntas),
 
     mostrarSiguienteCarta: function () {
@@ -451,6 +453,7 @@ const juego = {
         textoElemento.style.opacity = 0;
         contadorElemento.style.opacity = 0;
 
+        // Transicion entre carta y carta
         setTimeout(() => {
             const cartaActual = this.mazo.sacarUna();
             textoElemento.innerText = cartaActual.texto;
@@ -477,6 +480,7 @@ const juego = {
             textoElemento.style.opacity = 0;
             contadorElemento.style.opacity = 0;
 
+            // Transicion entre carta y reinicio
             setTimeout(() => {
                 textoElemento.innerText = "¡Mazo reiniciado! Hacé clic en 'Sacar Carta' para empezar de nuevo.";
                 contadorElemento.innerText = "";
